@@ -6,9 +6,75 @@
   width: 240px; 
   height: 240px; 
   position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  display: inline-block;
+  transform: rotateX(45deg);
+}
+
+.peak-chart .child {
+  position: absolute;
+  bottom: 50%; 
+  left: 50%; 
+  width: 120px; 
+  height: 120px; 
+  -webkit-transform-origin: 0 100%; 
+  -moz-transform-origin: 0 100%; 
+  -ms-transform-origin: 0 100%; 
+  transform-origin: 0 100%;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; 
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
 }
 
 .peak-chart .child:nth-child(1) {
+  background-color: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(192, 60%, 60%), hsl(192, 60%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(2) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(192, 60%, 60%), hsl(192, 60%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(3) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(335, 60%, 60%), hsl(335, 60%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(4) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(64, 60%, 60%), hsl(64, 60%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(5) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(234, 32%, 50%), hsl(234, 32%, 50%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(6) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 50%), hsl(345, 58%, 50%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(7) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 50%), hsl(345, 58%, 50%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(8) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 60%), hsl(345, 58%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(9) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(185, 27%, 50%), hsl(185, 27%, 50%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(10) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(185, 27%, 60%), hsl(185, 27%, 60%) 50%, transparent 50%)
+}
+
+
+/* .peak-chart .child:nth-child() {
   position: absolute; 
   bottom: 50%; 
   left: 50%; 
@@ -42,4 +108,4 @@
   width: 120px; 
   height: 120px; 
   background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(64, 60%, 60%), hsl(64, 60%, 60%) 50%, transparent 50%)
-}
+} */
