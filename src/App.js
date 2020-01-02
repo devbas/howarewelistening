@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Slider from './Slider/slider'
+import Graph from './Graph/graph'
+import CountryList from './CountryList/countryList'
+import Story from './Story/story'
+
+import * as LoadActions from './Loader/actions'
+
+
+class App extends React.Component {
+
+  componentDidMount() {
+    // Trigger csv load
+    this.props.actions.fetchData()
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Slider></Slider>
+        <Graph></Graph>
+        <CountryList></CountryList>
+        <Story></Story>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(LoadActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
