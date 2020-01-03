@@ -11,7 +11,8 @@ class Graph extends React.Component {
 
     this.state = {
       graph: [], 
-      elements: []
+      elements: [], 
+      data: []
     }
   
     this.chartRef = React.createRef()
@@ -23,7 +24,8 @@ class Graph extends React.Component {
 
   componentDidUpdate() {
     this.setState({
-      graph: this.props.graph
+      graph: this.props.graph,
+      data: this.props.data 
     })
 
     if(!this.chartRef.current) return
@@ -31,11 +33,11 @@ class Graph extends React.Component {
     const elements = []
     const r = this.chartRef.current.offsetWidth 
     const charth = 1.5 * r
-
+    console.log({ data: this.state.data, graph: this.state.graph })
     // Initiate the iterator on 2 since we skip the first 2 elements of the array 
-    for(let i = 2; i < this.state.graph.length; i++) {
+    for(let i = 0; i < this.state.data.length; i++) {
 
-      const data = this.state.graph 
+      const data = this.state.data 
 
       // Split the peaks evenly around the graph 
       const slice = 2 * Math.PI / data.length 
@@ -116,7 +118,8 @@ class Graph extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    graph: state.graph.flat()
+    graph: state.graph.flat(), 
+    data: state.graph.flat().splice(3)
   }
 }
 

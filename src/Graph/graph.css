@@ -73,6 +73,37 @@
   background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(185, 27%, 60%), hsl(185, 27%, 60%) 50%, transparent 50%)
 }
 
+.peak-chart .child:nth-child(11) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(12) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(13) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(14) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(15) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%)
+} 
+
+.peak-chart .child:nth-child(16) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(345, 58%, 60%), hsl(345, 58%, 60%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(17) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 80%), hsl(220, 6%, 80%) 50%, transparent 50%)
+}
+
+.peak-chart .child:nth-child(18) {
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 50%, transparent 50%), linear-gradient(to top left, hsl(220, 6%, 90%), hsl(220, 6%, 90%) 50%, transparent 50%);
+}
 
 /* .peak-chart .child:nth-child() {
   position: absolute; 
