@@ -9,6 +9,7 @@ import Story from './Story/story'
 
 import * as LoadActions from './Loader/actions'
 
+import './index.css'
 
 class App extends React.Component {
 
@@ -20,17 +21,35 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Slider></Slider>
-        <Graph></Graph>
-        <CountryList></CountryList>
-        <Story></Story>
+        <div className="row">
+          <div className="cell-from-3">
+            <CountryList></CountryList>
+          </div> 
+          <div className="cell-from-3 primary-graph-box">
+            <Graph></Graph>
+          </div>
+          <div className="cell-from-3">
+            <Graph></Graph>
+          </div>
+        </div>
+        <div className="row">
+          <Story></Story>
+        </div>
+        {this.props.countryData.length > 0 &&
+          <div className="row">
+            <Slider></Slider>
+          </div>
+        }
+        
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    countryData: state.countryData
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

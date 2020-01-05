@@ -10,8 +10,10 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
-  display: inline-block;
+  /* display: inline-block; */
   transform: rotateX(45deg);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .peak-chart .child {

@@ -13,3 +13,16 @@ export const data = (state = [], action) => {
   }
  
 }
+
+export const countryData = (state = [], action) => {
+
+  switch(action.type) {
+
+    case 'SET_COUNTRY_DATA': 
+      const data = action.data 
+      return data
+    
+    default: 
+      return state 
+  }
+}

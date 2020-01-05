@@ -5,10 +5,14 @@ export const dates = (state = [], action) => {
     case 'SET_DATE_BOUNDARIES': 
 
       const dates = action.dates.map(date => new Date(date))
-      return { 
+      console.log({ dates: dates, minDate: Math.min.apply(null,dates) })
+      const newState = { 
         start: new Date(Math.min.apply(null,dates)), 
         end: new Date(Math.max.apply(null,dates)) 
       }
+
+      console.log({ newState: newState })
+      return newState
 
     default: 
       return state 

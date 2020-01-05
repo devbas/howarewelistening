@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { getColumnFromMatrix, dataArrayRef } from '../utils'
+
+import Contrast from './contrast.js'
 
 import * as SliderActions from './actions'
 
@@ -13,17 +16,26 @@ class Slider extends React.Component {
 
     this.state = {
       range: 0, 
-      date: null 
+      date: null, 
+      danceability: [],
+      acousticness: []
     }
   }
+
+  // shouldComponentUpdate(nextProps) {
+  //   return nextProps.graph !== this.state.graph;
+  // }
 
   componentDidMount() {
     
     // Set initial state of the time slider
     this.setState({
-      date: this.props.dates.start
+      date: this.props.dates.start,
+      danceability: getColumnFromMatrix(this.props.countryData, dataArrayRef.danceability), 
+      acousticness: getColumnFromMatrix(this.props.countryData, dataArrayRef.acousticness)
     })
-    console.log({ dateStart: this.props.dates.start })
+
+    console.log({ dateStart: this.props.dates.start, countryData: this.props.countryData })
   }
 
   onTimeRangeChange(e) {
@@ -39,7 +51,10 @@ class Slider extends React.Component {
   render() {
     return (
       <>
-        <p>Slider</p>
+        <Contrast 
+          danceability={this.state.danceability}
+          acousticness={this.state.acousticness}
+        />
         {this.props.dates.start && this.props.dates.end &&
           <input type="range" 
             min={this.props.dates.start.getTime() / 1000} 
@@ -58,7 +73,8 @@ class Slider extends React.Component {
 const mapStateToProps = (state) => {
   return {
     dates: state.dates, 
-    date: state.date 
+    date: state.date, 
+    countryData: state.countryData
   }
 }
 

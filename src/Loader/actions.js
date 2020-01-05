@@ -1,11 +1,18 @@
 import * as types from '../types'
 import Papa from 'papaparse'
-import { getColumnFromMatrix, dataArrayRef } from '../utils'
+import { getColumnFromMatrix, getRowsFromMatrix, dataArrayRef } from '../utils'
 import _ from 'lodash'
 
 export function setData({ data }) {
   return {
     type: types.INIT_DATA, 
+    data: data 
+  }
+}
+
+export function setCountryData({ data }) {
+  return {
+    type: types.SET_COUNTRY_DATA, 
     data: data 
   }
 }
@@ -26,7 +33,8 @@ export function setDates({ dates }) {
 
 export function fetchData() {
   return (dispatch, getState) => {
-    const file = '/data/sample_audio_aggregates.csv'
+    // const file = '/data/sample_audio_aggregates.csv'
+    const file = '/data/audio_aggregates_normalized.csv'
 
     try {
       Papa.parse(file, {
@@ -39,8 +47,13 @@ export function fetchData() {
           const countries = _.uniq(getColumnFromMatrix(results.data, dataArrayRef.country))
           dispatch(setCountries({ countries: countries })) 
 
-          const dates = _.uniq(getColumnFromMatrix(results.data, dataArrayRef.date))
+          const countryData = getRowsFromMatrix(results.data, dataArrayRef.country, getState().country)
+          dispatch(setCountryData({ data: countryData })) 
+
+          const dates = _.uniq(getColumnFromMatrix(countryData, dataArrayRef.date))
+          console.log({ dates: dates })
           dispatch(setDates({ dates: dates }))
+
         }
       })
     } catch(e) {

@@ -33,7 +33,6 @@ class Graph extends React.Component {
     const elements = []
     const r = this.chartRef.current.offsetWidth 
     const charth = 1.5 * r
-    console.log({ data: this.state.data, graph: this.state.graph })
     // Initiate the iterator on 2 since we skip the first 2 elements of the array 
     for(let i = 0; i < this.state.data.length; i++) {
 
@@ -96,7 +95,6 @@ class Graph extends React.Component {
   }
 
   render() {
-    console.log({ elements: this.state.elements })
     return (
       <div className="graph-container">
         <div className="peak-chart" ref={this.chartRef}>
